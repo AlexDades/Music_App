@@ -24,7 +24,7 @@ public class SongAdapter extends ArrayAdapter<Song> {
         /**First we check if the view is being reused**/
         View mainActivityView = convertView;
         if(mainActivityView == null){
-            mainActivityView = LayoutInflater.from(getContext()).inflate(R.layout.activity_main, parent, false);
+            mainActivityView = LayoutInflater.from(getContext()).inflate(R.layout.song_item, parent, false);
         }
 
         /**Variable stores the song at the given position**/
