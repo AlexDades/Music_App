@@ -1,6 +1,8 @@
 package com.example.adades.musicapp;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.view.menu.ListMenuItemView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +16,11 @@ import java.util.ArrayList;
  */
 
 public class SongAdapter extends ArrayAdapter<Song> {
+    public int mColorResource;
 
-    public SongAdapter (Context context, ArrayList<Song> songs){
+    public SongAdapter (Context context, ArrayList<Song> songs, int colorResource){
         super(context, 0, songs);
+        mColorResource=colorResource;
     }
 
     @Override
@@ -32,7 +36,7 @@ public class SongAdapter extends ArrayAdapter<Song> {
 
         /**Place the song name in the corresponding TextView**/
         TextView songName = mainActivityView.findViewById(R.id.song_name);
-        songName.setText(currentSong.getSongNAme());
+        songName.setText(currentSong.getSongName());
 
         /**Place the artist in the corresponding TextView**/
         TextView artist = mainActivityView.findViewById(R.id.artist);
@@ -41,6 +45,15 @@ public class SongAdapter extends ArrayAdapter<Song> {
         /**Place the play button in the corresponding ImageView**/
         ImageView playButton = mainActivityView.findViewById(R.id.play);
         playButton.setImageResource(currentSong.getPlayButton());
+
+/*
+        */
+/**Setting the color for each song item**//*
+
+        View itemColor = mainActivityView.findViewById(R.id.song_list);
+        int color = ContextCompat.getColor(getContext(),mColorResource);
+        itemColor.setBackgroundColor(color);
+*/
 
         /**Return the entire list item**/
         return mainActivityView;

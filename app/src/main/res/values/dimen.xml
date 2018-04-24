@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="song_padding">12dp</dimen>
+    <dimen name="play_padding">12dp</dimen>
+    <dimen name="pause_padding">12dp</dimen>
+    <dimen name="sont_artist_padding">2dp</dimen>
+    <dimen name="now_playing_song">24sp</dimen>
+    <dimen name="now_playing_padding">48dp</dimen>
+</resources>
