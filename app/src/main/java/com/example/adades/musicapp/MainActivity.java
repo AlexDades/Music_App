@@ -51,10 +51,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent , View view, int position, long id) {
                 Intent play = new Intent(MainActivity.this, NowPlaying.class);
+
                 String songName = songs.get(position).getSongName();
                 String artist = songs.get(position).getArtist();
+                play.putParcelableArrayListExtra("song list", songs);
                 play.putExtra("song name", songs.get(position).getSongName());
                 play.putExtra("artist", songs.get(position).getArtist());
+                play.putExtra("position", position);
                 startActivity(play);
             }
         });
